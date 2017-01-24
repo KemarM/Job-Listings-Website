@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="description" content="Job Listing Application">
+      <meta name="keywords" content="computer science jobs, information technology jobs, CS jobs, IT jobs">
+      <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no">
+      <title>Job Listings App</title>
+      <link rel="stylesheet" href="jQuery/jquery.mobile-1.3.2.min.css" />
+
+      <!-- load JavaScript libraries -->
+      <script src="jQuery/jquery-1.10.2.min.js"></script>
+
+      <!-- include code for page initialisations -->
+      <script src="init.js"></script>
+      <script src="jQuery/jquery.mobile-1.3.2.min.js"></script>
+      <script src="addJob.js"></script>
+
+   </head>
+
+   <body>
+
+    <!-- HOME PAGE -->
+    <!--------------->
+    <section data-role="page" data-theme="b" id="home">
+       <!-- Header -->
+       <header data-role="header" data-position="fixed">
+          <h2>Jobs Mobile Website</h2>
+       </header>
+
+       <!-- Content -->
+       <div data-role="content">
+		 <a data-role="button" href="#searchData" data-transition="slide">Search Database</a>
+          <a data-role="button" href="#addJob" data-transition="slide">Add a Job</a>
+
+          <a data-role="button" data-ajax="false" href="listJobs.html" data-transition="slide">List Jobs</a>
+		 <a data-role="button" href="#addScholar" data-transition="slide">Add Scholoarships</a>
+
+          <a data-role="button" data-ajax="false" href="listScholarships.html" data-transition="slide">List Scholoarships</a>
+		 <a data-role="button" href="#addInternship" data-transition="slide">Add Internships</a>
+
+          <a data-role="button" data-ajax="false" href="listInternships.html" data-transition="slide">List Internsips</a>
+       </div>
+
+       <!-- Footer -->
+       <script src="footer.js"></script>
+
+	</section>
+
+
+    <!-- Add a Job Page-->
+    <!--------------------------------->
+    <section data-role="page" data-theme="b" id="addJob">
+      <!-- Header -->
+      <header data-role="header" data-position="fixed">
+        <h2>Add a Job</h2>
+        <a data-role="button" data-rel="back">Back</a>
+      </header>
+
+      <!-- Content -->
+      <div data-role="content">
+        <form id="addJobForm" method="post" data-ajax="false">
+          <fieldset>
+            <div data-role="fieldcontain">
+
+               <!-- Name of job which must contain ->(two words, upper or lowercase) -->
+               <label for="name">Job name:</label>
+	           <input type="text" id="name" name="name"  pattern="[A-Za-z]+(\s+[A-Za-z]+){1}" placeholder="Name of job" required />
+
+
+	           <!-- Description of job -->
+	           <label for="jobDescription">Job description:</label>
+	           <textarea id="jobDescription" name ="jobDescription"
+                      placeholder="Description of job" required></textarea>
+
+               <!-- When the Add Job button is pressed the job information is added  to localStorage -->
+
+            </div>
+	        <button type="submit" id="addJobButton"
+			name="addJobButton">Add a Job</button>
+
+          </fieldset>
+        </form>
+      </div>
+
+      <!-- Footer -->
+      <script src="footer.js"></script>
+
+    </section>
+	
+    <!-- Add A Scholarship Page-->
+    <!--------------------------------->
+	<section data-role="page" data-theme="b" id="addScholar">
+      <!-- Header -->
+      <header data-role="header" data-position="fixed">
+        <h2>Add a Scholarship</h2>
+        <a data-role="button" data-rel="back">Back</a>
+      </header>
+
+      <!-- Content -->
+      <div data-role="content">
+        <form id="addScholarForm" method="post" data-ajax="false">
+          <fieldset>
+            <div data-role="fieldcontain">
+
+               <!-- Name of scholarships, this field can contain any number of words and characters -->
+               <label for="myScholar">Scholarship Name:</label>
+	           <input type="text" id="myScholar" name="myScholar"  placeholder="Name of Scholarship" required />
+
+
+	           <!-- Description of scholarship -->
+	           <label for="scholarDescription">Scholarshp description:</label>
+	           <textarea id="scholarDescription" name ="scholarDescription"  placeholder="Description of Scholarship" required></textarea>
+
+               <!-- When the Add Scholarship button is pressed the job information is added to localStorage -->
+
+            </div>
+	        <button type="submit" id="addScholarButton"
+			name="addScholarButton">Add a Scholarship</button>
+
+          </fieldset>
+        </form>
+      </div>
+
+      <!-- Footer -->
+      <script src="footer.js"></script>
+
+    </section>
+	
+    <!-- Add An Internship Page-->
+    <!--------------------------------->
+	<section data-role="page" data-theme="b" id="addInternship">
+      <!-- Header -->
+      <header data-role="header" data-position="fixed">
+        <h2>Add an Internship</h2>
+        <a data-role="button" data-rel="back">Back</a>
+      </header>
+
+      <!-- Content -->
+      <div data-role="content">
+        <form id="addInternshipForm" method="post" data-ajax="false">
+          <fieldset>
+            <div data-role="fieldcontain">
+
+               <!-- Name of internship, this field can contain any number of words and characters -->
+               <label for="myInternship">Internship name:</label>
+	           <input type="text" id="internshipName" name="internshipName" placeholder="Name of Internship" required />
+
+
+	           <!-- Description of internship -->
+	           <label for="internshipDescription">Internship description:</label>
+	           <textarea id="internshipDescription" name ="internshipDescription"
+                      placeholder="Description of Internship" required></textarea>
+
+               <!-- When the Add Job button is pressed the job information is added to localStorage -->
+
+            </div>
+	        <button type="submit" id="addInternButton"
+			name="addInternButton">Add an Internship</button>
+
+          </fieldset>
+        </form>
+      </div>
+
+      <!-- Footer -->
+      <script src="footer.js"></script>
+
+    </section>
+	
+	
+    <!-- Search Page-->
+    <!--------------------------------->
+    <section data-role="page" data-theme="b" id="searchData">
+      <!-- Header -->
+      <header data-role="header" data-position="fixed">
+        <h2>Search The Database</h2>
+        <a data-role="button" data-rel="back">Back</a>
+      </header>
+
+      <!-- Content -->
+      <div data-role="content">
+         <a data-role="button" href="jobLists.php" data-ajax="false" data-transition="slide">Search Jobs</a>
+		  <a data-role="button" href="jobLists.php" data-ajax="false" data-transition="slide">Search Scholarships</a>
+		   <a data-role="button" href="jobLists.php" data-ajax="false" data-transition="slide">Search Internships</a>
+      </div>
+
+      <!-- Footer -->
+      <script src="footer.js"></script>
+
+    </section>
+  </body>
+</html>
